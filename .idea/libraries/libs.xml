@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/EasylinkSDKw_V1.01.00_20190417.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/fastjson-1.2.57.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/RXTXcomm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/EcrProtocol_V1.01.00_20190326.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
