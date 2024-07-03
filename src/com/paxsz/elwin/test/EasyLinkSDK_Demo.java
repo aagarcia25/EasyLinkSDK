@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 
 import com.paxsz.easylink.api.EasyLinkSdkManager;
 import com.paxsz.easylink.device.DeviceInfo;
@@ -55,7 +56,7 @@ public class EasyLinkSDK_Demo extends JPanel implements ActionListener, ItemList
     private JRadioButton mRdbtnCashback;
     private JTextField mTextAmount;
     private JTextArea mTransResultsArea;
-
+    private JLabel lblReloj;
     private CompletableFuture mFuture;
 
     private DeviceInfo mDeviceInfo;
@@ -74,7 +75,7 @@ public class EasyLinkSDK_Demo extends JPanel implements ActionListener, ItemList
      * @wbp.parser.entryPoint
      */
     public EasyLinkSDK_Demo() {
-
+    	initClock();
         initManager();
 
         registerListener();
@@ -106,6 +107,11 @@ public class EasyLinkSDK_Demo extends JPanel implements ActionListener, ItemList
         JLabel lblPlsConnectDevice = new JLabel("PLS Choose COM First!");
         lblPlsConnectDevice.setBounds(30, 10, 227, 15);
         add(lblPlsConnectDevice);
+        
+        lblReloj = new JLabel("Iniciando Reloj");
+        lblReloj.setBounds(250, 10, 227, 15);
+        add(lblReloj);
+
 
         mJComboBox = new JComboBox();
         mJComboBox.setBounds(45, 33, 93, 20);
@@ -144,9 +150,6 @@ public class EasyLinkSDK_Demo extends JPanel implements ActionListener, ItemList
         lblPleaseInputAny.setBounds(30, 134, 238, 15);
         add(lblPleaseInputAny);
         
-        JLabel lblResult = new JLabel("Transaccion Exitosa");
-        lblResult.setBounds(400, 10, 238, 15);
-        add(lblResult);
 
         mTextAmount = new JTextField();
         mTextAmount.setBounds(40, 159, 280, 21);
@@ -154,13 +157,25 @@ public class EasyLinkSDK_Demo extends JPanel implements ActionListener, ItemList
         mTextAmount.setColumns(10);
 
         mBtnDotransaction = new JButton("doTransaction");
-        mBtnDotransaction.setBounds(40, 190, 154, 23);
+        mBtnDotransaction.setBounds(40, 190, 300, 23);
         add(mBtnDotransaction);
 
         mTransResultsArea = new MainFrame("").getResultArea();
 
     }
 
+    private void initClock() {
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                String currentTime = sdf.format(new Date());
+                lblReloj.setText(currentTime);
+            }
+        });
+        timer.start();
+    }
+    
     private void initEvent() {
         mBtnConnect.addActionListener(this);
         mBtnDisconnect.addActionListener(this);

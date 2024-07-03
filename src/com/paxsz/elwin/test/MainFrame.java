@@ -90,7 +90,7 @@ public class MainFrame implements ActionListener {
         mJFrame = new JFrame();
         mJFrame.setSize(900, 900);//(900, 600);
         mJFrame.setLocationRelativeTo(null); // Centered relative to the screen
-        mJFrame.setResizable(false); // Cannot change frame size
+        mJFrame.setResizable(true); // Cannot change frame size
         mJFrame.setTitle("EasyLinkWinSDK");
 
         Image image =
@@ -132,7 +132,7 @@ public class MainFrame implements ActionListener {
 
         
         JLabel lblResultsArea = new JLabel("Results Area :");
-        lblResultsArea.setBounds(589, 40, 100, 15);
+        lblResultsArea.setBounds(20, 594, 100, 15);
         mContentPane.add(lblResultsArea);
 
         mResultsArea = new JTextArea("the return code...");
@@ -141,12 +141,12 @@ public class MainFrame implements ActionListener {
         mResultsArea.setEditable(false); // Set read-only
         mJSPResult = new JScrollPane(mResultsArea);
         mJSPResult.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        mJSPResult.setBounds(589, 65, 282, 211);
+        mJSPResult.setBounds(20, 619, 282, 211);
         mJSPResult.setViewportView(mResultsArea);
         mContentPane.add(mJSPResult);
 
         JLabel lblReportsArea = new JLabel("Reports Area :");
-        lblReportsArea.setBounds(589, 294, 100, 15);
+        lblReportsArea.setBounds(589, 594, 100, 15);
         mContentPane.add(lblReportsArea);
 
         mMReportsArea = new JTextArea("the report data...");
@@ -155,7 +155,7 @@ public class MainFrame implements ActionListener {
         mMReportsArea.setEditable(false); // Set read-only
         mMJSPReport = new JScrollPane(mMReportsArea);
         mMJSPReport.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        mMJSPReport.setBounds(589, 319, 282, 243);
+        mMJSPReport.setBounds(589, 619, 282, 243);
         mMJSPReport.setViewportView(mMReportsArea);
         mContentPane.add(mMJSPReport);
 
@@ -237,6 +237,9 @@ public class MainFrame implements ActionListener {
                 mResultsArea.setText("");
                 mMReportsArea.setText("");
 
+                
+               
+                
                 mPanelDemo.setVisible(false);
                 mPanelTest.setVisible(true);
 

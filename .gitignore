@@ -24,3 +24,10 @@ hs_err_pid*
 replay_pid*
 /.metadata
 /.metadata/.plugins/*
+.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.core.resources/0.snap
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.tasks.ui.prefs
+.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+.metadata/version.ini
